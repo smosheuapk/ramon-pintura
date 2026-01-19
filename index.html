@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramon Santos - Pintura e Reforma de Alto Padrão</title>
+    <meta name="description" content="Ramon Santos - Especialista em acabamentos de alto padrão: Pintura, Drywall, Sancas e Cimento Queimado em São Paulo.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -41,7 +42,17 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
     </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
 </head>
 <body class="bg-slate-clean text-slate-900">
 
@@ -49,7 +60,7 @@
     <nav class="fixed w-full z-50 bg-navy-deep shadow-xl py-3 md:py-4">
         <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
             <div class="flex items-center gap-2 md:gap-3">
-                <!-- LOGO RS: Quadro Laranja, Letras Azul -->
+                <!-- LOGO RS: Quadro Laranja (#FF8C00), Letras Azul (#1A56DB) -->
                 <div class="bg-[#FF8C00] text-[#1A56DB] w-9 h-9 md:w-10 md:h-10 flex items-center justify-center font-black rounded-lg shadow-sm text-lg md:text-xl">RS</div>
                 <div class="text-white leading-none">
                     <div class="font-black text-base md:text-lg tracking-tight">RAMON SANTOS</div>
@@ -60,38 +71,39 @@
             <div class="hidden md:flex gap-8 items-center">
                 <a href="#home" class="text-white hover:text-orange-vibrant font-bold text-xs uppercase tracking-widest transition-colors">Início</a>
                 <a href="#services" class="text-white hover:text-orange-vibrant font-bold text-xs uppercase tracking-widest transition-colors">Serviços</a>
+                <a href="#portfolio" class="text-white hover:text-orange-vibrant font-bold text-xs uppercase tracking-widest transition-colors">Portfólio</a>
                 <a href="#about" class="text-white hover:text-orange-vibrant font-bold text-xs uppercase tracking-widest transition-colors">Sobre</a>
                 <a href="#consultant" class="text-white hover:text-orange-vibrant font-bold text-xs uppercase tracking-widest transition-colors">Consultoria</a>
-                <a href="#contact" class="text-white hover:text-orange-vibrant font-bold text-xs uppercase tracking-widest transition-colors">Contato</a>
-                <a href="https://wa.me/5511963401261" class="bg-orange-vibrant hover:bg-white text-navy-deep px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg">WhatsApp</a>
+                <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento" class="bg-orange-vibrant hover:bg-white text-navy-deep px-6 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg">WhatsApp</a>
             </div>
 
             <!-- Mobile Button -->
-            <button onclick="toggleMenu()" class="md:hidden text-white p-2 flex items-center justify-center" aria-label="Menu">
+            <button onclick="window.toggleMenu()" class="md:hidden text-white p-2 flex items-center justify-center" aria-label="Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2.5" stroke-linecap="round"/></svg>
             </button>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-navy-deep border-t border-white/10 p-6 flex flex-col gap-5">
-            <a href="#home" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Início</a>
-            <a href="#services" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Serviços</a>
-            <a href="#about" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Sobre</a>
-            <a href="#consultant" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Consultoria</a>
-            <a href="#contact" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Contato</a>
-            <a href="https://wa.me/5511963401261" class="bg-orange-vibrant text-navy-deep p-4 rounded-xl font-black text-center uppercase text-sm tracking-widest">Chamar no WhatsApp</a>
+            <a href="#home" onclick="window.toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Início</a>
+            <a href="#services" onclick="window.toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Serviços</a>
+            <a href="#portfolio" onclick="window.toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Portfólio</a>
+            <a href="#about" onclick="window.toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Sobre</a>
+            <a href="#consultant" onclick="window.toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Consultoria</a>
+            <a href="#contact" onclick="window.toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Contato</a>
+            <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento" class="bg-orange-vibrant text-navy-deep p-4 rounded-xl font-black text-center uppercase text-sm tracking-widest">Chamar no WhatsApp</a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section id="home" class="min-h-[80vh] md:min-h-screen flex items-center bg-white pt-20 md:pt-24">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center py-8 md:py-24">
             <div class="z-10 text-center md:text-left">
-                <span class="text-orange-vibrant font-black text-[10px] md:text-xs tracking-[0.3em] uppercase mb-3 md:mb-4 block">Especialista em Acabamentos</span>
-                <h1 class="text-4xl md:text-7xl font-black text-navy-deep mt-2 md:mt-4 mb-5 md:mb-6 leading-tight">
-                    Transforme seu ambiente com <span class="text-orange-vibrant">excelência</span>.
+                <span class="text-orange-vibrant font-black text-[10px] md:text-xs tracking-[0.3em] uppercase mb-3 md:mb-4 block">Especialista em Acabamentos de Alto Padrão</span>
+                <h1 class="text-3xl md:text-7xl font-black text-navy-deep mt-2 md:mt-4 mb-5 md:mb-6 leading-tight">
+                    A transformação <span class="text-orange-vibrant">impecável</span> que seu ambiente merece.
                 </h1>
-                <p class="text-slate-600 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">Pinturas de alto padrão, gesso e cimento queimado com garantia de limpeza, pontualidade e o melhor acabamento de São Paulo.</p>
-                <a href="#contact" class="inline-block bg-orange-vibrant text-navy-deep px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:scale-105 transition-transform">
+                <p class="text-slate-600 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">Especialista em Pintura, Drywall e Cimento Queimado. Qualidade técnica e respeito ao seu imóvel em cada etapa da transformação.</p>
+                <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento" class="inline-block bg-orange-vibrant text-navy-deep px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:scale-105 transition-transform">
                     Orçamento Grátis
                 </a>
             </div>
@@ -106,7 +118,7 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section id="services" class="py-12 md:py-24 bg-slate-clean">
+    <section id="services" class="py-8 md:py-24 bg-slate-clean">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
                 <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4">Nossos Serviços</h2>
@@ -119,8 +131,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><rect width="16" height="6" x="2" y="3" rx="2"/><path d="M10 9v11a2 2 0 0 1-2 2H6"/><path d="M18 9v2a2 2 0 0 0 2 2h2"/></svg>
                     </div>
                     <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Pintura Profissional</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Interna e externa (até 2º andar) com foco em proteção e limpeza total do ambiente.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Acabamento fino em cada detalhe, com proteção total e zero sujeira. <strong>(Atendimento em fachadas até o 2º andar)</strong>.</p>
+                    <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento%20para%20Pintura%20Profissional" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
                 <!-- Card 2: Drywall -->
                 <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
@@ -128,8 +140,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
                     </div>
                     <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Drywall & Gesso</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Sancas modernas, forros rebaixados e molduras com acabamento fino impecável.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Instalação técnica de sancas e divisórias com nivelamento a laser. Estruturas impecáveis para seu projeto.</p>
+                    <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento%20para%20Drywall%20e%20Gesso" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
                 <!-- Card 3: Cimento Queimado -->
                 <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
@@ -137,8 +149,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="m5 3 1 1"/><path d="m19 3-1 1"/><path d="m5 21 1-1"/><path d="m19 21-1-1"/></svg>
                     </div>
                     <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Cimento Queimado</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Especialista em texturas modernas e industriais para paredes de destaque.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">O toque rústico e sofisticado do cimento queimado com acabamento superior e alta durabilidade.</p>
+                    <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento%20para%20Cimento%20Queimado" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
                 <!-- Card 4: Revestimentos -->
                 <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
@@ -146,24 +158,64 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
                     </div>
                     <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Revestimentos</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Troca de azulejos e pisos com nivelamento a laser e rejunte perfeito.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Assentamento técnico de porcelanatos e azulejos com nivelamento preciso para um visual impecável.</p>
+                    <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento%20para%20Revestimentos" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-8 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+                <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4">Nossos Trabalhos</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-navy-deep mb-4 md:mb-6">Portfólio de Acabamentos</h3>
+                <p class="text-slate-500 text-sm md:text-base">Confira alguns dos ambientes transformados pela nossa equipe técnica.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Port items... (omitted content for brevity, same as previous) -->
+                <div class="portfolio-item group overflow-hidden rounded-[2rem] shadow-lg relative bg-navy-deep">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800" class="w-full h-72 object-cover opacity-90 transition-all duration-500 group-hover:opacity-100" alt="Pintura Residencial">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-navy-deep to-transparent text-white">
+                        <span class="text-orange-vibrant font-black text-[10px] uppercase tracking-widest mb-2 block">Pintura Interna</span>
+                        <h4 class="text-lg font-black">Acabamento Acetinado</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item group overflow-hidden rounded-[2rem] shadow-lg relative bg-navy-deep">
+                    <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=800" class="w-full h-72 object-cover opacity-90 transition-all duration-500 group-hover:opacity-100" alt="Drywall e Gesso">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-navy-deep to-transparent text-white">
+                        <span class="text-orange-vibrant font-black text-[10px] uppercase tracking-widest mb-2 block">Drywall</span>
+                        <h4 class="text-lg font-black">Sanca Aberta com LED</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item group overflow-hidden rounded-[2rem] shadow-lg relative bg-navy-deep">
+                    <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=800" class="w-full h-72 object-cover opacity-90 transition-all duration-500 group-hover:opacity-100" alt="Cimento Queimado">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-navy-deep to-transparent text-white">
+                        <span class="text-orange-vibrant font-black text-[10px] uppercase tracking-widest mb-2 block">Textura</span>
+                        <h4 class="text-lg font-black">Cimento Queimado Industrial</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="https://instagram.com/ramonsantos9296" target="_blank" class="inline-flex items-center gap-2 bg-slate-100 text-navy-deep px-8 py-4 rounded-2xl font-bold hover:bg-orange-vibrant hover:text-white transition-all">
+                    Ver mais no Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CONSULTANT SECTION -->
-    <section id="consultant" class="py-12 md:py-24 bg-white">
+    <section id="consultant" class="py-8 md:py-24 bg-slate-clean">
         <div class="container mx-auto px-6">
             <div class="bg-navy-deep rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-20 text-white relative overflow-hidden shadow-2xl border-b-[8px] md:border-b-[12px] border-orange-vibrant text-center md:text-left">
                 <div class="relative z-10 max-w-2xl mx-auto md:mx-0">
                     <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm tracking-[0.3em] uppercase mb-3 md:mb-4">Dica Técnica IA</h2>
                     <h3 class="text-3xl md:text-4xl font-black mb-5 md:mb-6">Dúvida sobre sua obra?</h3>
-                    <p class="text-slate-300 mb-8 md:mb-10 text-base md:text-lg leading-relaxed">Nossa IA orientada pelo Ramon dá dicas técnicas na hora sobre cores e acabamentos.</p>
+                    <p class="text-slate-300 mb-8 md:mb-10 text-base md:text-lg leading-relaxed">Nossa IA orientada pelo Ramon dá dicas técnicas na hora sobre cores e acabamentos de alto padrão.</p>
                     <div class="relative max-w-md mx-auto md:mx-0">
                         <input id="consultQuery" placeholder="Ex: Qual a melhor cor?" class="w-full bg-white/10 border-2 border-white/20 p-4 md:p-5 rounded-2xl text-white outline-none focus:border-orange-vibrant pr-32 md:pr-36 text-sm md:text-base transition-all">
-                        <button onclick="handleConsult()" id="consultBtn" class="absolute right-2 top-2 bottom-2 bg-orange-vibrant text-navy-deep px-4 md:px-6 rounded-xl font-black uppercase text-[10px] md:text-xs hover:bg-white transition-colors">Perguntar</button>
+                        <button onclick="window.handleConsult()" id="consultBtn" class="absolute right-2 top-2 bottom-2 bg-orange-vibrant text-navy-deep px-4 md:px-6 rounded-xl font-black uppercase text-[10px] md:text-xs hover:bg-white transition-colors">Perguntar</button>
                     </div>
                     <div id="responseContainer" class="hidden mt-6 md:mt-8 p-5 md:p-6 bg-white/5 rounded-2xl border border-white/10 animate-fade-in text-left">
                         <p id="responseText" class="italic text-slate-200 text-sm leading-relaxed"></p>
@@ -175,7 +227,7 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-12 md:py-24 bg-white">
+    <section id="about" class="py-8 md:py-24 bg-white">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div class="order-2 md:order-1">
                 <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 text-center md:text-left">Diferenciais</h2>
@@ -184,22 +236,22 @@
                     <div class="flex gap-4 md:gap-5">
                         <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black text-sm md:text-base">1</div>
                         <div>
-                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Obra Limpa</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Organização rigorosa com proteção de móveis e limpeza pós-obra.</p>
+                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Obra Limpa e Organizada</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Organização rigorosa com proteção de móveis e limpeza pós-obra completa.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 md:gap-5">
                         <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black text-sm md:text-base">2</div>
                         <div>
-                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Pontualidade</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Respeito total ao cronograma e aos prazos de entrega do seu projeto.</p>
+                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Pontualidade e Foco</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Respeito total ao cronograma e aos prazos de entrega do seu projeto impecável.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 md:gap-5">
                         <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black text-sm md:text-base">3</div>
                         <div>
-                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Acabamento Fino</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Perfeccionismo nos detalhes: gesso reto, pintura uniforme e cantos alinhados.</p>
+                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Nivelamento a Laser</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Perfeccionismo técnico com nivelamento a laser para acabamentos superior e milimetricamente perfeitos.</p>
                         </div>
                     </div>
                 </div>
@@ -211,7 +263,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-12 md:py-24 bg-navy-deep text-white">
+    <section id="contact" class="py-8 md:py-24 bg-navy-deep text-white">
         <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20">
             <div class="text-center lg:text-left">
                 <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4">Contato</h2>
@@ -238,14 +290,14 @@
                     <input placeholder="Nome" class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl outline-none focus:ring-2 ring-orange-vibrant text-sm md:text-base">
                     <input placeholder="WhatsApp" class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl outline-none focus:ring-2 ring-orange-vibrant text-sm md:text-base">
                 </div>
-                <select class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl outline-none focus:ring-2 ring-orange-vibrant font-bold text-sm md:text-base appearance-none">
+                <select id="serviceSelect" class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl outline-none focus:ring-2 ring-orange-vibrant font-bold text-sm md:text-base appearance-none">
                     <option>Pintura</option>
                     <option>Gesso / Drywall</option>
                     <option>Cimento Queimado</option>
                     <option>Reforma Completa</option>
                 </select>
                 <textarea placeholder="Fale sobre seu projeto..." class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl h-32 md:h-40 outline-none focus:ring-2 ring-orange-vibrant text-sm md:text-base"></textarea>
-                <button class="w-full bg-orange-vibrant text-navy-deep font-black py-4 md:py-5 rounded-xl md:rounded-2xl text-base md:text-lg shadow-xl shadow-orange-vibrant/20 hover:scale-[1.02] transition-transform uppercase tracking-widest">Solicitar Orçamento</button>
+                <button onclick="window.location.href='https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento'" class="w-full bg-orange-vibrant text-navy-deep font-black py-4 md:py-5 rounded-xl md:rounded-2xl text-base md:text-lg shadow-xl shadow-orange-vibrant/20 hover:scale-[1.02] transition-transform uppercase tracking-widest">Solicitar Orçamento</button>
             </form>
         </div>
     </section>
@@ -262,49 +314,11 @@
     </footer>
 
     <!-- FLOAT WHATSAPP -->
-    <a href="https://wa.me/5511963401261" target="_blank" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] bg-[#25D366] text-white p-3.5 md:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-2" aria-label="Falar no WhatsApp">
+    <a href="https://wa.me/5511963401261?text=Olá%20Ramon,%20vi%20seu%20site%20e%20quero%20um%20orçamento" target="_blank" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] bg-[#25D366] text-white p-3.5 md:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-2" aria-label="Falar no WhatsApp">
         <svg class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.6-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.6-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
-
-    <!-- SCRIPTS -->
-    <script type="module">
-        import { GoogleGenAI } from 'https://esm.sh/@google/genai';
-
-        window.toggleMenu = () => {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        };
-
-        window.handleConsult = async () => {
-            const queryInput = document.getElementById('consultQuery');
-            const query = queryInput.value;
-            const container = document.getElementById('responseContainer');
-            const text = document.getElementById('responseText');
-            const btn = document.getElementById('consultBtn');
-
-            if (!query.trim()) return;
-
-            const originalText = btn.innerText;
-            btn.innerText = '...';
-            btn.disabled = true;
-
-            try {
-                const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-                const result = await ai.models.generateContent({
-                    model: 'gemini-3-flash-preview',
-                    contents: `Você é o consultor técnico do Ramon Santos Pintura. Dê uma dica curta e profissional sobre reforma de no máximo 3 frases. Ramon é especialista em Cimento Queimado, Gesso e Pintura Fina. Pergunta: ${query}`
-                });
-                text.innerText = result.text;
-                container.classList.remove('hidden');
-                queryInput.value = '';
-            } catch (e) {
-                text.innerText = "Fale com o Ramon no WhatsApp para uma resposta técnica detalhada!";
-                container.classList.remove('hidden');
-            } finally {
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }
-        };
-    </script>
+    
+    <!-- O script index.tsx será carregado automaticamente pelo ambiente -->
+    <script src="index.tsx" type="module"></script>
 </body>
 </html>
