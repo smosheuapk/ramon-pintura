@@ -46,14 +46,14 @@
 <body class="bg-slate-clean text-slate-900">
 
     <!-- HEADER / NAVBAR -->
-    <nav class="fixed w-full z-50 bg-navy-deep shadow-xl py-4">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-3">
+    <nav class="fixed w-full z-50 bg-navy-deep shadow-xl py-3 md:py-4">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2 md:gap-3">
                 <!-- LOGO RS: Quadro Laranja, Letras Azul -->
-                <div class="bg-[#FF8C00] text-[#1A56DB] w-10 h-10 flex items-center justify-center font-black rounded-lg shadow-sm text-xl">RS</div>
+                <div class="bg-[#FF8C00] text-[#1A56DB] w-9 h-9 md:w-10 md:h-10 flex items-center justify-center font-black rounded-lg shadow-sm text-lg md:text-xl">RS</div>
                 <div class="text-white leading-none">
-                    <div class="font-black text-lg tracking-tight">RAMON SANTOS</div>
-                    <div class="text-[9px] tracking-[0.2em] text-white/90 font-black uppercase">Pintura & Reforma</div>
+                    <div class="font-black text-base md:text-lg tracking-tight">RAMON SANTOS</div>
+                    <div class="text-[8px] md:text-[9px] tracking-[0.2em] text-white/90 font-black uppercase">Pintura & Reforma</div>
                 </div>
             </div>
 
@@ -67,30 +67,31 @@
             </div>
 
             <!-- Mobile Button -->
-            <button onclick="toggleMenu()" class="md:hidden text-white p-2">
+            <button onclick="toggleMenu()" class="md:hidden text-white p-2 flex items-center justify-center" aria-label="Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2.5" stroke-linecap="round"/></svg>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-deep border-t border-white/10 p-6 flex flex-col gap-4">
-            <a href="#home" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase">Início</a>
-            <a href="#services" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase">Serviços</a>
-            <a href="#about" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase">Sobre</a>
-            <a href="#contact" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase">Contato</a>
-            <a href="https://wa.me/5511963401261" class="bg-orange-vibrant text-navy-deep p-4 rounded-xl font-black text-center uppercase text-sm">WhatsApp</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-deep border-t border-white/10 p-6 flex flex-col gap-5">
+            <a href="#home" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Início</a>
+            <a href="#services" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Serviços</a>
+            <a href="#about" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Sobre</a>
+            <a href="#consultant" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Consultoria</a>
+            <a href="#contact" onclick="toggleMenu()" class="text-white font-bold text-sm uppercase tracking-widest">Contato</a>
+            <a href="https://wa.me/5511963401261" class="bg-orange-vibrant text-navy-deep p-4 rounded-xl font-black text-center uppercase text-sm tracking-widest">Chamar no WhatsApp</a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="home" class="min-h-screen flex items-center bg-white pt-24">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="z-10">
-                <span class="text-orange-vibrant font-black text-xs tracking-[0.3em] uppercase mb-4 block">Especialista em Acabamentos</span>
-                <h1 class="text-5xl md:text-7xl font-black text-navy-deep mt-4 mb-6 leading-tight">
+    <section id="home" class="min-h-[80vh] md:min-h-screen flex items-center bg-white pt-20 md:pt-24">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24">
+            <div class="z-10 text-center md:text-left">
+                <span class="text-orange-vibrant font-black text-[10px] md:text-xs tracking-[0.3em] uppercase mb-3 md:mb-4 block">Especialista em Acabamentos</span>
+                <h1 class="text-4xl md:text-7xl font-black text-navy-deep mt-2 md:mt-4 mb-5 md:mb-6 leading-tight">
                     Transforme seu ambiente com <span class="text-orange-vibrant">excelência</span>.
                 </h1>
-                <p class="text-slate-600 text-lg mb-8 max-w-md leading-relaxed">Pinturas de alto padrão, gesso e cimento queimado com garantia de limpeza, pontualidade e o melhor acabamento de São Paulo.</p>
-                <a href="#contact" class="inline-block bg-orange-vibrant text-navy-deep px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:scale-105 transition-transform">
+                <p class="text-slate-600 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">Pinturas de alto padrão, gesso e cimento queimado com garantia de limpeza, pontualidade e o melhor acabamento de São Paulo.</p>
+                <a href="#contact" class="inline-block bg-orange-vibrant text-navy-deep px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:scale-105 transition-transform">
                     Orçamento Grátis
                 </a>
             </div>
@@ -105,156 +106,156 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section id="services" class="py-24 bg-slate-clean">
+    <section id="services" class="py-12 md:py-24 bg-slate-clean">
         <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-orange-vibrant font-black text-sm uppercase tracking-[0.3em] mb-4">Nossos Serviços</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-navy-deep mb-6">Soluções de Alto Padrão</h3>
+            <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+                <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4">Nossos Serviços</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-navy-deep mb-4 md:mb-6">Soluções de Alto Padrão</h3>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-8 group-hover:bg-orange-vibrant transition-colors text-2xl">🎨</div>
-                    <h4 class="text-xl font-black text-navy-deep mb-4">Pintura Profissional</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Interna e externa (até 2º andar) com foco em proteção e limpeza total do ambiente.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-6 md:mb-8 group-hover:bg-orange-vibrant transition-colors text-xl md:text-2xl">🎨</div>
+                    <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Pintura Profissional</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Interna e externa (até 2º andar) com foco em proteção e limpeza total do ambiente.</p>
+                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-8 group-hover:bg-orange-vibrant transition-colors text-2xl">🏗️</div>
-                    <h4 class="text-xl font-black text-navy-deep mb-4">Drywall & Gesso</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Sancas modernas, forros rebaixados e molduras com acabamento fino impecável.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-6 md:mb-8 group-hover:bg-orange-vibrant transition-colors text-xl md:text-2xl">🏗️</div>
+                    <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Drywall & Gesso</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Sancas modernas, forros rebaixados e molduras com acabamento fino impecável.</p>
+                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-8 group-hover:bg-orange-vibrant transition-colors text-2xl">🏛️</div>
-                    <h4 class="text-xl font-black text-navy-deep mb-4">Cimento Queimado</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Especialista em texturas modernas e industriais para paredes de destaque.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-6 md:mb-8 group-hover:bg-orange-vibrant transition-colors text-xl md:text-2xl">🏛️</div>
+                    <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Cimento Queimado</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Especialista em texturas modernas e industriais para paredes de destaque.</p>
+                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
                 <!-- Card 4 -->
-                <div class="bg-white p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-8 group-hover:bg-orange-vibrant transition-colors text-2xl">💎</div>
-                    <h4 class="text-xl font-black text-navy-deep mb-4">Revestimentos</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Troca de azulejos e pisos com nivelamento a laser e rejunte perfeito.</p>
-                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
+                <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-orange-vibrant transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-navy-deep text-white flex items-center justify-center rounded-2xl mb-6 md:mb-8 group-hover:bg-orange-vibrant transition-colors text-xl md:text-2xl">💎</div>
+                    <h4 class="text-lg md:text-xl font-black text-navy-deep mb-3 md:mb-4">Revestimentos</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6 md:mb-8">Troca de azulejos e pisos com nivelamento a laser e rejunte perfeito.</p>
+                    <a href="https://wa.me/5511963401261" class="text-orange-vibrant font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-2">Saiba Mais →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CONSULTANT SECTION -->
-    <section id="consultant" class="py-24 bg-white">
+    <section id="consultant" class="py-12 md:py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="bg-navy-deep rounded-[3rem] p-10 md:p-20 text-white relative overflow-hidden shadow-2xl border-b-[12px] border-orange-vibrant">
-                <div class="relative z-10 max-w-2xl">
-                    <h2 class="text-orange-vibrant font-black text-sm tracking-[0.3em] uppercase mb-4">Dica Técnica IA</h2>
-                    <h3 class="text-4xl font-black mb-6">Dúvida sobre sua obra?</h3>
-                    <p class="text-slate-300 mb-10 text-lg">Nossa IA orientada pelo Ramon dá dicas técnicas na hora sobre cores e acabamentos.</p>
-                    <div class="relative">
-                        <input id="consultQuery" placeholder="Ex: Qual a melhor cor para aumentar a sala?" class="w-full bg-white/10 border-2 border-white/20 p-5 rounded-2xl text-white outline-none focus:border-orange-vibrant pr-36">
-                        <button onclick="handleConsult()" id="consultBtn" class="absolute right-2 top-2 bottom-2 bg-orange-vibrant text-navy-deep px-6 rounded-xl font-black uppercase text-xs hover:bg-white transition-colors">Perguntar</button>
+            <div class="bg-navy-deep rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-20 text-white relative overflow-hidden shadow-2xl border-b-[8px] md:border-b-[12px] border-orange-vibrant text-center md:text-left">
+                <div class="relative z-10 max-w-2xl mx-auto md:mx-0">
+                    <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm tracking-[0.3em] uppercase mb-3 md:mb-4">Dica Técnica IA</h2>
+                    <h3 class="text-3xl md:text-4xl font-black mb-5 md:mb-6">Dúvida sobre sua obra?</h3>
+                    <p class="text-slate-300 mb-8 md:mb-10 text-base md:text-lg leading-relaxed">Nossa IA orientada pelo Ramon dá dicas técnicas na hora sobre cores e acabamentos.</p>
+                    <div class="relative max-w-md mx-auto md:mx-0">
+                        <input id="consultQuery" placeholder="Ex: Qual a melhor cor?" class="w-full bg-white/10 border-2 border-white/20 p-4 md:p-5 rounded-2xl text-white outline-none focus:border-orange-vibrant pr-32 md:pr-36 text-sm md:text-base transition-all">
+                        <button onclick="handleConsult()" id="consultBtn" class="absolute right-2 top-2 bottom-2 bg-orange-vibrant text-navy-deep px-4 md:px-6 rounded-xl font-black uppercase text-[10px] md:text-xs hover:bg-white transition-colors">Perguntar</button>
                     </div>
-                    <div id="responseContainer" class="hidden mt-8 p-6 bg-white/5 rounded-2xl border border-white/10 animate-fade-in">
+                    <div id="responseContainer" class="hidden mt-6 md:mt-8 p-5 md:p-6 bg-white/5 rounded-2xl border border-white/10 animate-fade-in text-left">
                         <p id="responseText" class="italic text-slate-200 text-sm leading-relaxed"></p>
                     </div>
                 </div>
-                <div class="absolute top-0 right-0 w-1/3 h-full bg-orange-vibrant/5 -mr-20 skew-x-12"></div>
+                <div class="absolute top-0 right-0 w-1/3 h-full bg-orange-vibrant/5 -mr-20 skew-x-12 hidden md:block"></div>
             </div>
         </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" class="py-12 md:py-24 bg-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div class="order-2 md:order-1">
-                <h2 class="text-orange-vibrant font-black text-sm uppercase tracking-[0.3em] mb-4">Diferenciais</h2>
-                <h3 class="text-4xl font-black text-navy-deep mb-8 leading-tight">Por que escolher o Ramon?</h3>
-                <div class="space-y-8">
-                    <div class="flex gap-5">
-                        <div class="w-10 h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black">1</div>
+                <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 text-center md:text-left">Diferenciais</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-navy-deep mb-6 md:mb-8 leading-tight text-center md:text-left">Por que escolher o Ramon?</h3>
+                <div class="space-y-6 md:space-y-8">
+                    <div class="flex gap-4 md:gap-5">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black text-sm md:text-base">1</div>
                         <div>
-                            <h4 class="font-black text-navy-deep text-xl mb-1">Obra Limpa</h4>
-                            <p class="text-slate-500 text-sm">Organização rigorosa com proteção de móveis e limpeza pós-obra.</p>
+                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Obra Limpa</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Organização rigorosa com proteção de móveis e limpeza pós-obra.</p>
                         </div>
                     </div>
-                    <div class="flex gap-5">
-                        <div class="w-10 h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black">2</div>
+                    <div class="flex gap-4 md:gap-5">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black text-sm md:text-base">2</div>
                         <div>
-                            <h4 class="font-black text-navy-deep text-xl mb-1">Pontualidade</h4>
-                            <p class="text-slate-500 text-sm">Respeito total ao cronograma e aos prazos de entrega do seu projeto.</p>
+                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Pontualidade</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Respeito total ao cronograma e aos prazos de entrega do seu projeto.</p>
                         </div>
                     </div>
-                    <div class="flex gap-5">
-                        <div class="w-10 h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black">3</div>
+                    <div class="flex gap-4 md:gap-5">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-vibrant text-navy-deep rounded-full flex items-center justify-center flex-shrink-0 font-black text-sm md:text-base">3</div>
                         <div>
-                            <h4 class="font-black text-navy-deep text-xl mb-1">Acabamento Fino</h4>
-                            <p class="text-slate-500 text-sm">Perfeccionismo nos detalhes: gesso reto, pintura uniforme e cantos alinhados.</p>
+                            <h4 class="font-black text-navy-deep text-lg md:text-xl mb-1">Acabamento Fino</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Perfeccionismo nos detalhes: gesso reto, pintura uniforme e cantos alinhados.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=800" class="rounded-[3rem] shadow-2xl" alt="Acabamento de Qualidade">
+                <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=800" class="rounded-[2.5rem] md:rounded-[3rem] shadow-2xl w-full" alt="Acabamento de Qualidade">
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24 bg-navy-deep text-white">
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
-            <div>
-                <h2 class="text-orange-vibrant font-black text-sm uppercase tracking-[0.3em] mb-4">Contato</h2>
-                <h3 class="text-5xl font-black mb-8 leading-tight">Pronto para a transformação?</h3>
-                <div class="space-y-8">
-                    <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 bg-orange-vibrant rounded-2xl flex items-center justify-center text-navy-deep text-2xl shadow-lg">📱</div>
-                        <div>
-                            <div class="text-slate-400 text-xs font-bold uppercase tracking-widest">WhatsApp</div>
-                            <a href="https://wa.me/5511963401261" class="text-2xl font-black hover:text-orange-vibrant transition-colors">(11) 96340-1261</a>
+    <section id="contact" class="py-12 md:py-24 bg-navy-deep text-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <div class="text-center lg:text-left">
+                <h2 class="text-orange-vibrant font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4">Contato</h2>
+                <h3 class="text-3xl md:text-5xl font-black mb-6 md:mb-8 leading-tight">Pronto para a transformação?</h3>
+                <div class="space-y-6 md:space-y-8 flex flex-col items-center lg:items-start">
+                    <div class="flex items-center gap-4 md:gap-6">
+                        <div class="w-10 h-10 md:w-14 md:h-14 bg-orange-vibrant rounded-xl md:rounded-2xl flex items-center justify-center text-navy-deep text-xl md:text-2xl shadow-lg">📱</div>
+                        <div class="text-left">
+                            <div class="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">WhatsApp</div>
+                            <a href="https://wa.me/5511963401261" class="text-lg md:text-2xl font-black hover:text-orange-vibrant transition-colors tracking-tight">(11) 96340-1261</a>
                         </div>
                     </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white text-2xl">📸</div>
-                        <div>
-                            <div class="text-slate-400 text-xs font-bold uppercase tracking-widest">Instagram</div>
-                            <a href="https://instagram.com/ramonsantos9296" class="text-2xl font-black hover:text-orange-vibrant transition-colors">@ramonsantos9296</a>
+                    <div class="flex items-center gap-4 md:gap-6">
+                        <div class="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-white text-xl md:text-2xl">📸</div>
+                        <div class="text-left">
+                            <div class="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">Instagram</div>
+                            <a href="https://instagram.com/ramonsantos9296" class="text-lg md:text-2xl font-black hover:text-orange-vibrant transition-colors tracking-tight">@ramonsantos9296</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <form class="bg-white p-10 rounded-[2.5rem] shadow-2xl space-y-4 text-navy-deep" onsubmit="event.preventDefault()">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input placeholder="Nome" class="w-full p-5 bg-slate-100 rounded-2xl outline-none focus:ring-2 ring-orange-vibrant">
-                    <input placeholder="WhatsApp" class="w-full p-5 bg-slate-100 rounded-2xl outline-none focus:ring-2 ring-orange-vibrant">
+            <form class="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl space-y-3 md:space-y-4 text-navy-deep max-w-xl mx-auto lg:mx-0 w-full" onsubmit="event.preventDefault()">
+                <div class="grid md:grid-cols-2 gap-3 md:gap-4">
+                    <input placeholder="Nome" class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl outline-none focus:ring-2 ring-orange-vibrant text-sm md:text-base">
+                    <input placeholder="WhatsApp" class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl outline-none focus:ring-2 ring-orange-vibrant text-sm md:text-base">
                 </div>
-                <select class="w-full p-5 bg-slate-100 rounded-2xl outline-none focus:ring-2 ring-orange-vibrant font-bold">
+                <select class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl outline-none focus:ring-2 ring-orange-vibrant font-bold text-sm md:text-base appearance-none">
                     <option>Pintura</option>
                     <option>Gesso / Drywall</option>
                     <option>Cimento Queimado</option>
                     <option>Reforma Completa</option>
                 </select>
-                <textarea placeholder="Fale sobre seu projeto..." class="w-full p-5 bg-slate-100 rounded-2xl h-40 outline-none focus:ring-2 ring-orange-vibrant"></textarea>
-                <button class="w-full bg-orange-vibrant text-navy-deep font-black py-5 rounded-2xl text-lg shadow-xl shadow-orange-vibrant/20 hover:scale-[1.02] transition-transform">Solicitar Orçamento</button>
+                <textarea placeholder="Fale sobre seu projeto..." class="w-full p-4 md:p-5 bg-slate-100 rounded-xl md:rounded-2xl h-32 md:h-40 outline-none focus:ring-2 ring-orange-vibrant text-sm md:text-base"></textarea>
+                <button class="w-full bg-orange-vibrant text-navy-deep font-black py-4 md:py-5 rounded-xl md:rounded-2xl text-base md:text-lg shadow-xl shadow-orange-vibrant/20 hover:scale-[1.02] transition-transform uppercase tracking-widest">Solicitar Orçamento</button>
             </form>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-navy-deep border-t border-white/5 py-12 text-center">
+    <footer class="bg-navy-deep border-t border-white/5 py-10 md:py-12 text-center">
         <div class="container mx-auto px-6">
-            <div class="flex items-center justify-center gap-3 mb-6">
-                <div class="bg-orange-vibrant text-navy-deep w-10 h-10 flex items-center justify-center font-black rounded-lg text-xl">RS</div>
-                <span class="text-white font-black text-xl tracking-tight uppercase">Ramon Santos</span>
+            <div class="flex items-center justify-center gap-2 md:gap-3 mb-5 md:mb-6">
+                <div class="bg-orange-vibrant text-navy-deep w-8 h-8 md:w-10 md:h-10 flex items-center justify-center font-black rounded-lg text-lg md:text-xl">RS</div>
+                <span class="text-white font-black text-lg md:text-xl tracking-tight uppercase">Ramon Santos</span>
             </div>
-            <p class="text-[10px] text-slate-500 uppercase tracking-[0.4em]">© 2024 Pintura e Reforma de Alto Padrão - São Paulo & ABC.</p>
+            <p class="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-[0.3em] md:tracking-[0.4em] px-4">© 2024 Pintura e Reforma de Alto Padrão - São Paulo & ABC.</p>
         </div>
     </footer>
 
     <!-- FLOAT WHATSAPP -->
-    <a href="https://wa.me/5511963401261" target="_blank" class="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center gap-2">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.6-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.6-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    <a href="https://wa.me/5511963401261" target="_blank" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] bg-[#25D366] text-white p-3.5 md:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-2" aria-label="Falar no WhatsApp">
+        <svg class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.6-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.6-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
 
     <!-- SCRIPTS -->
@@ -262,34 +263,37 @@
         import { GoogleGenAI } from 'https://esm.sh/@google/genai';
 
         window.toggleMenu = () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         };
 
         window.handleConsult = async () => {
-            const query = document.getElementById('consultQuery').value;
+            const queryInput = document.getElementById('consultQuery');
+            const query = queryInput.value;
             const container = document.getElementById('responseContainer');
             const text = document.getElementById('responseText');
             const btn = document.getElementById('consultBtn');
 
             if (!query.trim()) return;
 
+            const originalText = btn.innerText;
             btn.innerText = '...';
             btn.disabled = true;
 
             try {
-                // process.env.API_KEY é injetado automaticamente pelo ambiente
                 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
                 const result = await ai.models.generateContent({
                     model: 'gemini-3-flash-preview',
-                    contents: `Você é o consultor técnico do Ramon Santos Pintura. Dê uma dica curta e profissional sobre reforma. Ramon é especialista em Cimento Queimado, Gesso e Pintura Fina. Pergunta: ${query}`
+                    contents: `Você é o consultor técnico do Ramon Santos Pintura. Dê uma dica curta e profissional sobre reforma de no máximo 3 frases. Ramon é especialista em Cimento Queimado, Gesso e Pintura Fina. Pergunta: ${query}`
                 });
                 text.innerText = result.text;
                 container.classList.remove('hidden');
+                queryInput.value = '';
             } catch (e) {
                 text.innerText = "Fale com o Ramon no WhatsApp para uma resposta técnica detalhada!";
                 container.classList.remove('hidden');
             } finally {
-                btn.innerText = 'Consultar';
+                btn.innerText = originalText;
                 btn.disabled = false;
             }
         };
